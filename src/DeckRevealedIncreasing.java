@@ -1,7 +1,4 @@
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class DeckRevealedIncreasing {
     /**
@@ -47,7 +44,6 @@ public class DeckRevealedIncreasing {
             if (i == deck.length - 1) break;
             Integer poll = (Integer) queue.poll();
             queue.add(poll);
-
         }
 
         int[] a = new int[deck.length];
