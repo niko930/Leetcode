@@ -22,7 +22,6 @@ public class AddToArrayForm {
 
         Collections.reverse(list);
         return list;
-
     }
 
     public static void main(String[] args) {
