@@ -10,23 +10,24 @@ public class AddToArrayForm {
      */
     public List<Integer> addToArrayForm(int[] A, int K) {
         int cur = K;
-        List<Integer> ans = new ArrayList();
-
         int i = A.length;
-        while (--i >= 0 || cur > 0) {
-            if (i >= 0)
+
+        List<Integer> list = new ArrayList<>();
+        while(--i>=0 || cur>0){
+            if(i>=0)
                 cur += A[i];
-            ans.add(cur % 10);
-            cur /= 10;
+            list.add(cur%10);
+            cur/=10;
         }
 
-        Collections.reverse(ans);
-        return ans;
+        Collections.reverse(list);
+        return list;
+
     }
 
     public static void main(String[] args) {
         AddToArrayForm a = new AddToArrayForm();
-        List<Integer> integers = a.addToArrayForm(new int[]{2, 7, 4}, 181);
+        List<Integer> integers = a.addToArrayForm(new int[]{2, 1, 5}, 806);
         System.out.println(integers);
     }
 }
