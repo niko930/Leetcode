@@ -25,9 +25,9 @@ public class SearchMatrix {
         if (matrix.length == 0)
             return false;
 
-        int x = matrix.length - 1;
-        int y = 0;
-        while (x < matrix[0].length && y >= 0) {
+        int x = 0;
+        int y = matrix[0].length - 1;
+        while (x < matrix.length && y >= 0) {
             if (matrix[x][y] == target)
                 return true;
             else if (matrix[x][y] < target)
