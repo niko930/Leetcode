@@ -24,11 +24,4 @@ public class IsPalindrome {
         }
         return sb.toString().equals(sb.reverse().toString());
     }
-
-    public static void main(String[] args) {
-        String s = "0P";
-        IsPalindrome i = new IsPalindrome();
-        boolean palindrome = i.isPalindrome(s);
-        System.out.println(palindrome);
-    }
 }
