@@ -23,13 +23,3 @@ public class CountNodes {
         return root == null ? 0 : countNodes(root.left) + countNodes(root.right) + 1;
     }
 }
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode(int x) {
-        val = x;
-    }
-}
