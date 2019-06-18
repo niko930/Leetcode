@@ -45,11 +45,4 @@ public class ValidIPAddress {
         String ipv6 = "^([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}$";
         return Pattern.compile(ipv4).matcher(IP).matches() ? "IPv4" : Pattern.compile(ipv6).matcher(IP).matches() ? "IPv6" : "Neither";
     }
-
-    public static void main(String[] args) {
-        String s = "172.16.254.1";
-        ValidIPAddress v = new ValidIPAddress();
-        String s1 = v.validIPAddress(s);
-        System.out.println(s1);
-    }
 }
