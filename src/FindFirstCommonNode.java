@@ -7,7 +7,9 @@ public class FindFirstCommonNode {
      * 输入两个链表，找出它们的第一个公共结点。
      */
     public ListNode findFirstCommonNode(ListNode pHead1, ListNode pHead2) {
-        if(pHead1 == null || pHead2 == null) return null;
+        if(pHead1 == null || pHead2 == null) {
+            return null;
+        }
         ListNode current1 = pHead1;
         ListNode current2 = pHead2;
         HashMap<ListNode, Integer> map = new HashMap<>();
@@ -16,8 +18,9 @@ public class FindFirstCommonNode {
             current1 = current1.next;
         }
         while (current2 != null) {
-            if (map.containsKey(current2))
+            if (map.containsKey(current2)) {
                 return current2;
+            }
             current2 = current2.next;
         }
         return null;
