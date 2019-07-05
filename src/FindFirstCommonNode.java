@@ -6,7 +6,7 @@ public class FindFirstCommonNode {
      *
      * 输入两个链表，找出它们的第一个公共结点。
      */
-    public ListNode FindFirstCommonNode(ListNode pHead1, ListNode pHead2) {
+    public ListNode findFirstCommonNode(ListNode pHead1, ListNode pHead2) {
         if(pHead1 == null || pHead2 == null) return null;
         ListNode current1 = pHead1;
         ListNode current2 = pHead2;
