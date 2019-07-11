@@ -14,7 +14,6 @@ public class FindNumbersWithSum {
         ArrayList<Integer> list = new ArrayList<>();
         int i = 0, j = array.length - 1;
         while(i < j){
-
             if(array[i] + array[j] == sum){
                 list.add(array[i]);
                 list.add(array[j]);
