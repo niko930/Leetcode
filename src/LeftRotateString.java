@@ -1,7 +1,7 @@
 public class LeftRotateString {
     /**
      * 左旋转字符串
-     *
+     * <p>
      * 题目描述
      * 汇编语言中有一种移位指令叫做循环左移（ROL），
      * 现在有个简单的任务，就是用字符串模拟这个指令的运算结果。
@@ -9,12 +9,12 @@ public class LeftRotateString {
      * 例如，字符序列S=”abcXYZdef”,要求输出循环左移3位后的结果，即“XYZdefabc”。
      * 是不是很简单？OK，搞定它！
      */
-    public String LeftRotateString(String str,int n) {
+    public String LeftRotateString(String str, int n) {
         int len = str.length();
-        if(len == 0) return "";
+        if (len == 0) return "";
         n = n % len;
         str += str;
-        return str.substring(n, len+n);
+        return str.substring(n, len + n);
     }
 
 }
