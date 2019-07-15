@@ -4,7 +4,7 @@ import java.util.Arrays;
 public class IsContinuous {
     /**
      * 扑克牌顺子
-     *
+     * <p>
      * LL今天心情特别好,因为他去买了一副扑克牌,
      * 发现里面居然有2个大王,2个小王(一副牌原本是54张^_^)...
      * 他随机从中抽出了5张牌,想测测自己的手气,看看能不能抽到顺子,
@@ -17,8 +17,27 @@ public class IsContinuous {
      * 现在,要求你使用这幅牌模拟上面的过程,然后告诉我们LL的运气如何，
      * 如果牌能组成顺子就输出true，否则就输出false。为了方便起见,你可以认为大小王是0。
      */
-    public boolean isContinuous(int [] numbers) {
-        if(numbers.length == 0 || numbers == null){
+    public boolean isContinuous(int[] numbers) {
+        if (numbers.length != 5) {
+            return false;
+        }
+        int max = -1;
+        int min = 14;
+        int flag = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            int num = numbers[i];
+            if (num < 0 || num > 13) return false;
+            if(num == 0)continue;
+            if ((flag >> num & 1) == 1) return false;
+            flag |= 1 << num;
+            if (num < min) min = num;
+            if (num > max) max = num;
+            if (max - min >= 5) return false;
+
+        }
+        return true;
+
+       /* if(numbers.length == 0 || numbers == null){
             return false;
         }
         Arrays.sort(numbers);
@@ -37,6 +56,6 @@ public class IsContinuous {
             }
             temp++;
         }
-        return index == numbers.length-list.size();
+        return index == numbers.length-list.size();*/
     }
 }
