@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class IsContinuous {
     /**
      * 扑克牌顺子
