@@ -7,20 +7,23 @@ public class ReConstructBinaryTree {
      * 例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。
      */
     public TreeNode reConstructBinaryTree(int[] pre, int[] in) {
-        if(pre == null || in == null)
+        if (pre == null || in == null) {
             return null;
-        TreeNode root = reConstructBinaryTree(pre, 0, pre.length-1, in, 0, in.length-1);
+        }
+        TreeNode root = reConstructBinaryTree(pre, 0, pre.length, in, 0, in.length);
         return root;
     }
 
-    private TreeNode reConstructBinaryTree(int[] pre, int preStart, int preEnd, int[] in, int inStart, int inEnd) {
-        if(preStart > preEnd || inStart > inEnd)
+    private TreeNode reConstructBinaryTree(int[] pre, int StartPre, int EndPre, int[] in, int StartIn, int EndIn) {
+        if(StartPre > EndPre || StartIn > EndIn){
             return null;
-        TreeNode root = new TreeNode(pre[preStart]);
-        for(int i=inStart;i<=inEnd;i++){
-            if(in[i] == pre[preStart]){
-                root.left = reConstructBinaryTree(pre, preStart+1, preStart-inStart+i, in, inStart, i-1);
-                root.right = reConstructBinaryTree(pre, preStart+i-inStart+1, preEnd, in, i+1, inEnd);
+        }
+        TreeNode root = new TreeNode(pre[StartPre]);
+        for(int i=StartIn;i<=EndIn;i++){
+            if(in[i] == pre[StartPre]){
+                root.left = reConstructBinaryTree(pre, StartPre+1, StartPre+i-StartIn, in, StartIn, i-1);
+                root.right = reConstructBinaryTree(pre, StartPre+i-StartIn+1, EndPre, in, i+1, EndIn);
+                break;
             }
         }
         return root;
@@ -30,7 +33,6 @@ public class ReConstructBinaryTree {
         int val;
         TreeNode left;
         TreeNode right;
-
         TreeNode(int x) {
             val = x;
         }
