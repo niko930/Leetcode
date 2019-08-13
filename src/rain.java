@@ -41,7 +41,6 @@ public class rain {
         System.out.println("end=" + end);
 
         int res = (end - start - 1) * Math.min(arr[start], arr[end]);
-//        System.out.println("res="+res);
         for (int i = start + 1; i < end; i++) {
             res -= arr[i];
         }
