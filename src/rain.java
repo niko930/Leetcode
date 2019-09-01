@@ -1,4 +1,5 @@
 public class rain {
+
     /**
      * 墙之间能存下多少水？
      *
@@ -16,6 +17,7 @@ public class rain {
      *  |____1____________|
      *   0 1 2 3 4 5 6 7 8
      */
+
     private static int maxRain(int[] arr) {
         int len = arr.length;
         int start = 0;
@@ -37,8 +39,6 @@ public class rain {
         if (len < 3) {
             return 0;
         }
-        System.out.println("start=" + start);
-        System.out.println("end=" + end);
 
         int res = (end - start - 1) * Math.min(arr[start], arr[end]);
         for (int i = start + 1; i < end; i++) {
