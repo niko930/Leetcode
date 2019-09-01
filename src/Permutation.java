@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Permutation {
-    ArrayList<String> list = new ArrayList<>();
-    public ArrayList<String> Permutation(String str) {
+    private ArrayList<String> list = new ArrayList<>();
+    private ArrayList<String> Permutation(String str) {
         PermutationHelper(str.toCharArray(), 0, str.length()-1);
         Collections.sort(list);
         return list;
@@ -11,7 +11,7 @@ public class Permutation {
 
     private void PermutationHelper(char[] chars, int start, int end) {
         if(start == end) {
-            StringBuffer s = new StringBuffer();
+            StringBuilder s = new StringBuilder();
             for (char c : chars) {
                 s.append(c);
             }
@@ -36,7 +36,7 @@ public class Permutation {
 
     public static void main(String[] args) {
         Permutation permutation = new Permutation();
-        ArrayList<String> a = permutation.Permutation("aa");
+        ArrayList<String> a = permutation.Permutation("abc");
         System.out.println(a.toString());
     }
 }
