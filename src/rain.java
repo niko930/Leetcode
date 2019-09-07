@@ -16,6 +16,7 @@ public class rain {
      *  |2  |_|2          |
      *  |____1____________|
      *   0 1 2 3 4 5 6 7 8
+     *   
      */
 
     private static int maxRain(int[] arr) {
