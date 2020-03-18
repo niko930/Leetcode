@@ -1,6 +1,7 @@
 import java.util.Arrays;
 
 public class ThreeSumClosest {
+
     /**
      * 16. 最接近的三数之和
      * <p>
@@ -12,23 +13,28 @@ public class ThreeSumClosest {
      */
     public int threeSumClosest(int[] nums, int target) {
         Arrays.sort(nums);
-        int closestNum = nums[0] + nums[1] + nums[2];
+        int ans = nums[0] + nums[1] + nums[2];
 
-        for (int i = 0; i < nums.length - 2; i++) {
+        for (int i = 0; i < nums.length; i++) {
             int l = i + 1, r = nums.length - 1;
             while (l < r) {
-                int threeSum = nums[i] + nums[l] + nums[r];
-                if (Math.abs(threeSum - target) < Math.abs(closestNum - target))
-                    closestNum = threeSum;
-
-                if (threeSum > target)
+                int sum = nums[i] + nums[l] + nums[r];
+                if (Math.abs(target - sum) < Math.abs(target - ans)) {
+                    ans = sum;
+                }
+                if (sum > target) {
                     r--;
-                else if (threeSum < target)
+                } else if (sum < target) {
                     l++;
-                else
-                    return target;
+                } else {
+                    return ans;
+                }
             }
         }
-        return closestNum;
+        return ans;
     }
+
+
+
+    /*tag 2020年3月18日20:42:41 二刷*/
 }
